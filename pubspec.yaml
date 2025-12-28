@@ -40,6 +40,10 @@ dependencies:
   
   # JSON Serialization
   json_annotation: ^4.9.0
+  
+  # State Management
+  flutter_bloc: ^8.1.6
+  equatable: ^2.0.5
 
 dev_dependencies:
   flutter_test:
