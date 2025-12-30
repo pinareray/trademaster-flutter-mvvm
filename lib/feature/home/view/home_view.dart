@@ -7,6 +7,7 @@ import '../../../product/widget/base/base_view.dart';
 import '../../../product/widget/card/coin_card.dart';
 import '../../../product/widget/error/error_widget.dart';
 import '../../../product/widget/loading/loading_shimmer.dart';
+import '../../market_detail/view/market_detail_view.dart';
 import '../service/home_service.dart';
 import '../view_model/home_cubit.dart';
 import '../view_model/home_state.dart';
@@ -77,7 +78,18 @@ class _HomeViewState extends BaseView<HomeView> {
         padding: context.padding.normal,
         itemCount: state.coins.length,
         itemBuilder: (context, index) {
-          return CoinCard(coin: state.coins[index]);
+          final coin = state.coins[index];
+          return GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => MarketDetailView(coin: coin),
+                ),
+              );
+            },
+            child: CoinCard(coin: coin),
+          );
         },
       ),
     );
