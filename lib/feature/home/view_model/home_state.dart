@@ -34,3 +34,4 @@ class HomeError extends HomeState {
   List<Object?> get props => [message];
 }
 
+
