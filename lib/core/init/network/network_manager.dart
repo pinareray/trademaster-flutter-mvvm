@@ -3,7 +3,7 @@ import '../../constants/app_constants.dart';
 
 class ProductNetworkManager {
   static ProductNetworkManager? _instance;
-  static ProductNetworkManager get instance => 
+  static ProductNetworkManager get instance =>
       _instance ??= ProductNetworkManager._init();
 
   late final INetworkManager networkManager;
@@ -17,5 +17,3 @@ class ProductNetworkManager {
     );
   }
 }
-
-

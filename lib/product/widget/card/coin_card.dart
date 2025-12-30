@@ -97,11 +97,15 @@ class CoinCard extends StatelessWidget {
   Widget _buildCoinName(BuildContext context) {
     return Row(
       children: [
-        Text(
-          coin.name ?? 'Unknown',
-          style: context.general.textTheme.titleMedium?.copyWith(
-            color: ColorConstants.white,
-            fontWeight: FontWeight.bold,
+        Expanded(
+          child: Text(
+            coin.name ?? 'Unknown',
+            style: context.general.textTheme.titleMedium?.copyWith(
+              color: ColorConstants.white,
+              fontWeight: FontWeight.bold,
+            ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
         ),
         SizedBox(width: context.sized.lowValue),

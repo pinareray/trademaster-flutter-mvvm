@@ -36,7 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   
   # Network Management
-  vexana: ^4.0.0
+  vexana: ^5.0.3
   
   # JSON Serialization
   json_annotation: ^4.9.0
