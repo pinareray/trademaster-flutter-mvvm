@@ -44,3 +44,4 @@ class SparklinePainter extends CustomPainter {
   }
 }
 
+

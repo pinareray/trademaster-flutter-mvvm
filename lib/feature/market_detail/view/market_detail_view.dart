@@ -269,3 +269,4 @@ class MarketDetailView extends StatelessWidget {
 }
 
 
+
