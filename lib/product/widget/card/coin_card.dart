@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 import '../../../core/constants/color_constants.dart';
+import '../../../core/constants/string_constants.dart';
 import '../../../feature/home/model/coin_model.dart';
 import 'sparkline_painter.dart';
 
@@ -99,7 +100,7 @@ class CoinCard extends StatelessWidget {
       children: [
         Expanded(
           child: Text(
-            coin.name ?? 'Unknown',
+            coin.name ?? StringConstants.unknownCoinName,
             style: context.general.textTheme.titleMedium?.copyWith(
               color: ColorConstants.white,
               fontWeight: FontWeight.bold,

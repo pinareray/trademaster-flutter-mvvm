@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kartal/kartal.dart';
+import '../../../core/constants/app_constants.dart';
 import '../../../core/constants/color_constants.dart';
 import '../../../core/init/network/network_manager.dart';
 import '../../../product/widget/base/base_view.dart';
@@ -62,7 +63,7 @@ class _HomeViewState extends BaseView<HomeView> {
   Widget _buildLoadingView(BuildContext context) {
     return ListView.builder(
       padding: context.padding.normal,
-      itemCount: 10,
+      itemCount: ApplicationConstants.shimmerLoadingCount,
       itemBuilder: (context, index) => const LoadingShimmer(),
     );
   }

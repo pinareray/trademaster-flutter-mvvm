@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 import '../../../core/constants/color_constants.dart';
+import '../../../core/constants/string_constants.dart';
 
 class CustomErrorWidget extends StatelessWidget {
   final String message;
@@ -27,7 +28,7 @@ class CustomErrorWidget extends StatelessWidget {
             ),
             SizedBox(height: context.sized.normalValue),
             Text(
-              'Error',
+              StringConstants.errorTitle,
               style: context.general.textTheme.headlineSmall?.copyWith(
                 color: ColorConstants.white,
                 fontWeight: FontWeight.bold,
@@ -46,7 +47,7 @@ class CustomErrorWidget extends StatelessWidget {
               ElevatedButton.icon(
                 onPressed: onRetry,
                 icon: const Icon(Icons.refresh),
-                label: const Text('Retry'),
+                label: const Text(StringConstants.retryButton),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: ColorConstants.crystalBlue,
                   foregroundColor: ColorConstants.white,
@@ -60,6 +61,7 @@ class CustomErrorWidget extends StatelessWidget {
     );
   }
 }
+
 
 
 

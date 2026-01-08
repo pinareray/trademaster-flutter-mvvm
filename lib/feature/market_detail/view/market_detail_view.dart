@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 
 import '../../../core/constants/color_constants.dart';
+import '../../../core/constants/string_constants.dart';
 import '../../home/model/coin_model.dart';
 
 class MarketDetailView extends StatelessWidget {
@@ -69,7 +70,7 @@ class MarketDetailView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                coin.name ?? 'Unknown',
+                coin.name ?? StringConstants.unknownCoinName,
                 style: context.general.textTheme.titleLarge?.copyWith(
                   color: ColorConstants.white,
                   fontWeight: FontWeight.bold,
@@ -143,7 +144,7 @@ class MarketDetailView extends StatelessWidget {
       ),
       alignment: Alignment.center,
       child: Text(
-        'Interactive chart coming soon',
+        StringConstants.chartPlaceholder,
         style: context.general.textTheme.bodyMedium?.copyWith(
           color: ColorConstants.white.withOpacity(0.7),
         ),
@@ -156,7 +157,7 @@ class MarketDetailView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Market Stats',
+          StringConstants.marketStatsTitle,
           style: context.general.textTheme.titleMedium?.copyWith(
             color: ColorConstants.white,
             fontWeight: FontWeight.bold,
@@ -176,16 +177,16 @@ class MarketDetailView extends StatelessWidget {
             children: [
               _buildStatRow(
                 context,
-                'Market Cap',
+                StringConstants.marketCapLabel,
                 coin.marketCap != null
                     ? '\$${coin.marketCap!.toStringAsFixed(0)}'
-                    : '-',
+                    : StringConstants.noData,
               ),
               SizedBox(height: context.sized.lowValue),
               _buildStatRow(
                 context,
-                'Market Cap Rank',
-                coin.marketCapRank?.toString() ?? '-',
+                StringConstants.marketCapRankLabel,
+                coin.marketCapRank?.toString() ?? StringConstants.noData,
               ),
             ],
           ),
@@ -234,7 +235,7 @@ class MarketDetailView extends StatelessWidget {
               ),
             ),
             child: Text(
-              'Sell',
+              StringConstants.sellButton,
               style: context.general.textTheme.titleMedium?.copyWith(
                 color: ColorConstants.white,
                 fontWeight: FontWeight.bold,
@@ -255,7 +256,7 @@ class MarketDetailView extends StatelessWidget {
               ),
             ),
             child: Text(
-              'Buy',
+              StringConstants.buyButton,
               style: context.general.textTheme.titleMedium?.copyWith(
                 color: ColorConstants.white,
                 fontWeight: FontWeight.bold,
@@ -267,6 +268,7 @@ class MarketDetailView extends StatelessWidget {
     );
   }
 }
+
 
 
 
