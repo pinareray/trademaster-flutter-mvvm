@@ -7,10 +7,3 @@ abstract class IHomeService {
 
   Future<List<CoinModel>?> fetchCoins();
 }
-
-
-
-
-
-
-

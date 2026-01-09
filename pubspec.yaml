@@ -47,6 +47,7 @@ dependencies:
   
   # UI Extensions
   kartal: ^3.0.0
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:

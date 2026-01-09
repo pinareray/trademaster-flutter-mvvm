@@ -21,4 +21,18 @@ class StringConstants {
 
   // General
   static const String noData = '-';
+
+  // Search
+  static const String searchHint = 'Search coins...';
+  static const String noResultsFound = 'No results found';
+  static const String tryDifferentKeyword = 'Try a different keyword';
+
+  // Filters
+  static const String allCoins = 'All';
+  static const String favoritesOnly = 'Favorites';
+  static const String noFavoritesYet = 'No favorites yet';
+  static const String addSomeCoins = 'Add some coins to your favorites';
+
+  // Sorting
+  static const String sortBy = 'Sort By';
 }

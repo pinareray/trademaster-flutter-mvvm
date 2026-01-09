@@ -1,10 +1,13 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kartal/kartal.dart';
 import '../../../core/constants/color_constants.dart';
 import '../../../core/constants/string_constants.dart';
 import '../../../feature/home/model/coin_model.dart';
+import '../../view_model/favorite_cubit.dart';
+import '../../view_model/favorite_state.dart';
 import 'sparkline_painter.dart';
 
 class CoinCard extends StatelessWidget {
@@ -59,6 +62,11 @@ class CoinCard extends StatelessWidget {
                     _buildPriceChange(context),
                   ],
                 ),
+
+                SizedBox(width: context.sized.lowValue),
+
+                // Favorite Button
+                _buildFavoriteButton(context),
               ],
             ),
           ),
@@ -186,6 +194,27 @@ class CoinCard extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildFavoriteButton(BuildContext context) {
+    return BlocBuilder<FavoriteCubit, FavoriteState>(
+      builder: (context, state) {
+        final isFav = context.read<FavoriteCubit>().isFavorite(coin.id ?? '');
+
+        return IconButton(
+          onPressed: () {
+            if (coin.id != null) {
+              context.read<FavoriteCubit>().toggleFavorite(coin.id!);
+            }
+          },
+          icon: Icon(
+            isFav ? Icons.favorite : Icons.favorite_border,
+            color: isFav ? ColorConstants.radicalRed : ColorConstants.white.withOpacity(0.5),
+            size: 24,
+          ),
+        );
+      },
     );
   }
 }

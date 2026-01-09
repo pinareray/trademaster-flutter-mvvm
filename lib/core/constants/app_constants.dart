@@ -9,4 +9,7 @@ class ApplicationConstants {
 
   // UI Constants
   static const int shimmerLoadingCount = 10;
+
+  // Storage Keys
+  static const String favoritesKey = 'favorite_coins';
 }
